@@ -12,19 +12,23 @@ class Empleado{
         void FnEmpleadoNombreSet(string sNom,string sApe)
         {
            
-            if(sNom.find("JUAN")==string::npos)
-            {
+            if(sNom.find("JUAN")==string::npos)//Es aqui profe trato de saber si el nombre de JUAN YA 
+            {                               //YA ESTA DISPONIBLE SI ES ASI 
                 sEmpleadoNombre=sNom;
-            }
-            if (sApe.empty())
-            {
+            
+                if (sApe.empty())
+                {
                 EmpleadoApellidoDefault();
                 cout<<"El apellido no puede estar vacio\n Se asigno un valor por default\n";
-            }
-            else{
+                }
+                else
+                {
                 sEmpleadoApellido=sApe;
+                }
+            }else
+            {
+                cout<<"El nombre no se asigno ni el apellido!"<<endl;
             }
-            
         }
 
         string FnStringEmpleadoNombreGet(){
