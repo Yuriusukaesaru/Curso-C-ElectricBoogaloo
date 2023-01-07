@@ -12,8 +12,8 @@ class Empleado{
         void FnEmpleadoNombreSet(string sNom,string sApe)
         {
            
-            if(sNom.find("JUAN")==string::npos)//Es aqui profe trato de saber si el nombre de JUAN YA 
-            {                               //YA ESTA DISPONIBLE SI ES ASI 
+            if(sNom.find("JUAN")==string::npos&&sNom.find("juan")==string::npos)//la funcion .find retorna un string::npos si no se encuentra 
+            {                          //la palabra 
                 sEmpleadoNombre=sNom;
             
                 if (sApe.empty())
@@ -25,9 +25,10 @@ class Empleado{
                 {
                 sEmpleadoApellido=sApe;
                 }
-            }else
+            }
+            else
             {
-                cout<<"El nombre no se asigno ni el apellido!"<<endl;
+                 cout<<"El nombre no se asigno ni el apellido!"<<endl;
             }
         }
 
@@ -53,16 +54,16 @@ int main(){
     Empleado xEmpleado;
 
     cout<<"CURSO DE C++"<<endl;
-    cout<<"COMPLEMENTO DE CLASES";
+    cout<<"COMPLEMENTO DE CLASES"<<endl;
 
         xEmpleado.iEmpleadoEdad={33};
-        xEmpleado.fEmpleadoPeso={44};
+        xEmpleado.fEmpleadoPeso={75.50};
         xEmpleado.fEmpleadoEstatura={1.31};
     
-    xEmpleado.FnEmpleadoNombreSet("JUAN","SANCHEZ");
+    xEmpleado.FnEmpleadoNombreSet("JULIO","SANCHEZ");
     cout<<"NOMBRE: "<<xEmpleado.FnStringEmpleadoNombreGet()<<endl;
     cout<<"EDAD: "<<xEmpleado.iEmpleadoEdad<<endl;
     cout<<"ESTATURA: "<<xEmpleado.fEmpleadoEstatura<<endl;
-    cout<<"PESO"<<xEmpleado.fEmpleadoPeso<<endl;
+    cout<<"PESO "<<xEmpleado.fEmpleadoPeso<<endl;
     return 0;
 }
